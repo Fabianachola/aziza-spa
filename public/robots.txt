@@ -1,0 +1,52 @@
+User-agent: *
+Allow: /
+Sitemap: https://azizaspa.com/sitemap-index.xml
+
+# Block admin and sensitive areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/
+Disallow: /temp/
+
+# Block crawlers from indexing certain pages
+Disallow: /book-appointment/confirmation/
+Disallow: /account/
+
+# Crawl-delay for heavy pages
+Crawl-delay: 5
+
+# Specify sitemap location
+Sitemap: https://azizaspa.com/sitemap-index.xml
+
+# Social media bots
+User-agent: Twitterbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: InstagramBot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Googlebot-Video
+Allow: /videos/
+
+# AI crawlers (block some)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /

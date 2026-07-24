@@ -1,0 +1,18 @@
+Contact: https://azizaspa.com/contact
+Expires: 2027-07-21T00:00:00.000Z
+Acknowledgments: https://azizaspa.com/security-acknowledgments
+Preferred-Languages: en
+Canonical: https://azizaspa.com/.well-known/security.txt
+Policy: https://azizaspa.com/security-policy
+Hiring: https://azizaspa.com/careers
+
+# Encryption
+Encryption: https://azizaspa.com/.well-known/pgp-key.txt
+
+# Security contact
+Contact: mailto:security@azizaspa.com
+Contact: https://azizaspa.com/contact
+
+# Report vulnerabilities
+Reporting: https://azizaspa.com/vulnerability-reporting
+Report: mailto:security@azizaspa.com

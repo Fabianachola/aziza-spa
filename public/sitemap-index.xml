@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://azizaspa.com/sitemaps/sitemap-pages.xml</loc>
+    <lastmod>2026-07-21</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://azizaspa.com/sitemaps/sitemap-services.xml</loc>
+    <lastmod>2026-07-21</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://azizaspa.com/sitemaps/sitemap-packages.xml</loc>
+    <lastmod>2026-07-21</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://azizaspa.com/sitemaps/sitemap-gallery.xml</loc>
+    <lastmod>2026-07-21</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://azizaspa.com/sitemaps/sitemap-articles.xml</loc>
+    <lastmod>2026-07-21</lastmod>
+  </sitemap>
+</sitemapindex>
