@@ -58,8 +58,9 @@
           <router-link to="/packages" class="mobile-link" @click="closeMenu">Packages</router-link>
           <router-link to="/gallery" class="mobile-link" @click="closeMenu">Gallery</router-link>
           <router-link to="/about" class="mobile-link" @click="closeMenu">About</router-link>
-          <!-- Book Now inside the menu - directly after About -->
-          <router-link to="/book-appointment" class="mobile-link book-now-link" @click="closeMenu">
+          
+          <!-- Book Now as a GREEN BUTTON -->
+          <router-link to="/book-appointment" class="mobile-book-btn" @click="closeMenu">
             Book Now
           </router-link>
         </div>
@@ -218,16 +219,31 @@ export default {
 }
 .mobile-link:hover { color: #25D366; }
 
-/* Book Now inside the menu - same styling, close to About */
-.book-now-link {
-  color: #25D366;
+/* ===== BOOK NOW AS GREEN BUTTON ===== */
+.mobile-book-btn {
+  display: block;
+  text-align: center;
+  background: #25D366;
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
-  margin-top: 0.2rem;
-  padding-top: 0.3rem;
-  border-top: 1px solid rgba(37, 211, 102, 0.15);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-top: 0.3rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
-.book-now-link:hover {
-  color: #128C7E;
+.mobile-book-btn:hover {
+  background: #128C7E;
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+.mobile-book-btn:active {
+  transform: scale(0.98);
 }
 
 /* Desktop */
@@ -247,6 +263,7 @@ export default {
   .mobile-nav { width: 280px; padding: 1.5rem; }
   .mobile-link { font-size: 1.4rem; }
   .mobile-nav-links { gap: 0.4rem; }
+  .mobile-book-btn { padding: 0.6rem 1.2rem; font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
@@ -255,6 +272,11 @@ export default {
   .mobile-nav { width: 85%; max-width: 300px; padding: 1.2rem; }
   .mobile-link { font-size: 1.2rem; }
   .mobile-nav-links { gap: 0.3rem; padding: 0.3rem 0; }
-  .book-now-link { margin-top: 0.1rem; padding-top: 0.2rem; }
+  .mobile-book-btn { 
+    padding: 0.5rem 1rem; 
+    font-size: 0.9rem; 
+    margin-top: 0.2rem;
+    border-radius: 10px;
+  }
 }
 </style>
