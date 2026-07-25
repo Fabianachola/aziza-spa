@@ -12,7 +12,6 @@
     <InstagramFeedSection />
     <FAQSection />
     <LuxuryCTASection />
-    <FloatingCallButton />
     <WhatsAppButton />
     <ScrollToTop />
   </div>
@@ -31,7 +30,6 @@ import Testimonials from '@/components/sections/Testimonials.vue';
 import InstagramFeedSection from '@/components/sections/InstagramFeedSection.vue';
 import FAQSection from '@/components/sections/FAQSection.vue';
 import LuxuryCTASection from '@/components/sections/LuxuryCTASection.vue';
-import FloatingCallButton from '@/components/common/FloatingCallButton.vue';
 import WhatsAppButton from '@/components/common/WhatsAppButton.vue';
 import ScrollToTop from '@/components/common/ScrollToTop.vue';
 
@@ -50,7 +48,6 @@ export default {
     InstagramFeedSection,
     FAQSection,
     LuxuryCTASection,
-    FloatingCallButton,
     WhatsAppButton,
     ScrollToTop
   }
