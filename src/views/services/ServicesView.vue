@@ -5,8 +5,10 @@
       <div class="hero-image">
         <img 
           src="/images/services/services-hero.jpg" 
-          alt="Luxury Wellness Experience"
-          loading="lazy"
+          alt="Luxury Spa Treatments at Aziza Spa - Massage, Facials, Body Treatments in Nairobi"
+          loading="eager"
+          width="1920"
+          height="1080"
         />
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -1770,7 +1772,7 @@ export default {
     max-height: 220px;
   }
   
-  /* 🔥 FIX: Images fully visible on mobile - show full image */
+  /*  FIX: Images fully visible on mobile - show full image */
   .service-image img {
     object-fit: cover;
     object-position: center center !important;
