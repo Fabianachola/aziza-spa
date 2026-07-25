@@ -2,15 +2,6 @@
 <template>
   <header class="app-header" :class="{ 'scrolled': isScrolled }">
     <div class="container">
-      <!-- Mobile Menu Toggle - LEFT -->
-      <button class="menu-toggle" @click="toggleMenu" aria-label="Toggle menu">
-        <span class="hamburger" :class="{ 'active': isMenuOpen }">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
-
       <!-- Logo -->
       <router-link to="/" class="logo">
         <img
@@ -42,15 +33,21 @@
         Book Now
       </router-link>
 
+      <!-- Mobile Menu Toggle - RIGHT -->
+      <button class="menu-toggle" @click="toggleMenu" aria-label="Toggle menu">
+        <span class="hamburger" :class="{ 'active': isMenuOpen }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
       <!-- Mobile Menu Overlay -->
       <div class="mobile-overlay" :class="{ 'open': isMenuOpen }" @click="closeMenu"></div>
 
-      <!-- Mobile Nav (slides from LEFT) -->
+      <!-- Mobile Nav (slides from LEFT) - NO LOGO INSIDE -->
       <nav class="mobile-nav" :class="{ 'open': isMenuOpen }">
         <div class="mobile-nav-header">
-          <router-link to="/" @click="closeMenu">
-            <img src="/images/logos/aziza-spa-logo.png" alt="Aziza Spa" class="mobile-logo" />
-          </router-link>
           <button class="close-menu" @click="closeMenu" aria-label="Close menu">✕</button>
         </div>
 
@@ -138,8 +135,6 @@ export default {
 .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.05em; color: #121212; white-space: nowrap; }
 .scrolled .logo-text { color: #121212; }
 
-.mobile-logo { height: 32px; width: auto; max-width: 120px; object-fit: contain; display: block; flex-shrink: 0; }
-
 .nav-links { display: flex; align-items: center; gap: 2.5rem; }
 .nav-link { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #fafafa; text-decoration: none; transition: color 0.3s ease; position: relative; letter-spacing: 0.02em; }
 .scrolled .nav-link { color: #2A2A2A; }
@@ -151,7 +146,15 @@ export default {
 .btn-book { background: #25D366; color: #ffffff; box-shadow: 0 10px 30px -10px rgba(37, 211, 102, 0.4); }
 .btn-book:hover { background: #128C7E; transform: translateY(-2px); box-shadow: 0 15px 40px -10px rgba(37, 211, 102, 0.5); }
 
-.menu-toggle { display: none; background: none; border: none; padding: 0.5rem; cursor: pointer; z-index: 1001; order: -1; }
+/* Menu Toggle - RIGHT */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1001;
+}
 .hamburger { display: flex; flex-direction: column; gap: 5px; width: 24px; }
 .hamburger span { display: block; height: 2px; background: #FAF8F4; transition: all 0.3s ease; }
 .scrolled .hamburger span { background: #2A2A2A; }
@@ -162,7 +165,7 @@ export default {
 .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; transition: opacity 0.3s ease; }
 .mobile-overlay.open { display: block; opacity: 1; }
 
-/* Slides in from the LEFT */
+/* Slides in from the LEFT - NO LOGO INSIDE */
 .mobile-nav {
   position: fixed;
   top: 0; left: -100%;
@@ -171,33 +174,94 @@ export default {
   z-index: 999;
   padding: 2rem;
   transition: left 0.4s ease;
-  display: flex; flex-direction: column; gap: 2rem;
+  display: flex; flex-direction: column;
   overflow-y: auto;
 }
 .mobile-nav.open { left: 0; }
 
-.mobile-nav-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
-.close-menu { background: none; border: none; font-size: 1.5rem; color: #2A2A2A; cursor: pointer; padding: 0.5rem; }
+.mobile-nav-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  flex-shrink: 0;
+}
 
-.mobile-nav-links { display: flex; flex-direction: column; gap: 1.5rem; flex: 1; }
-.mobile-link { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #2A2A2A; text-decoration: none; transition: color 0.3s ease; }
+.close-menu {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #2A2A2A;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.mobile-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: #2A2A2A;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0;
+  display: block;
+}
 .mobile-link:hover { color: #25D366; }
 
-.mobile-nav-footer { padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.05); }
-.btn-book-mobile { display: block; text-align: center; background: #25D366; color: #ffffff; padding: 1rem; border-radius: 16px; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 1rem; transition: background 0.3s ease; }
+.mobile-nav-footer {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  flex-shrink: 0;
+}
+
+.btn-book-mobile {
+  display: block;
+  text-align: center;
+  background: #25D366;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 16px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
 .btn-book-mobile:hover { background: #128C7E; }
 
+/* Desktop */
+@media (min-width: 1025px) {
+  .menu-toggle { display: none !important; }
+}
+
+/* Tablet & Mobile */
 @media (max-width: 1024px) {
   .nav-links, .btn-book { display: none; }
   .menu-toggle { display: block; }
 }
+
 @media (max-width: 768px) {
   .logo-text { font-size: 1.2rem; }
   .logo-image { height: 36px; max-width: 180px; }
   .mobile-nav { width: 280px; padding: 1.5rem; }
+  .mobile-link { font-size: 1.5rem; }
 }
+
 @media (max-width: 480px) {
   .logo-image { height: 32px; max-width: 140px; }
   .logo-text { font-size: 1rem; }
+  .mobile-nav { width: 85%; padding: 1.2rem; }
+  .mobile-link { font-size: 1.3rem; }
+  .mobile-nav-links { gap: 1rem; }
 }
 </style>
