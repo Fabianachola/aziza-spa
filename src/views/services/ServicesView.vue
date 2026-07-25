@@ -1770,17 +1770,12 @@ export default {
     max-height: 220px;
   }
   
-  /* 🔥 FIX: Image from bottom to top on mobile for specific services */
-  .service-card .service-image img {
-    object-position: center center;
-  }
-  
-  /* Signature Facial, Custom Facial, Deep Cleansing Facial, Pedicure + Manicure */
-  .service-card:nth-child(1) .service-image img,
-  .service-card:nth-child(2) .service-image img,
-  .service-card:nth-child(3) .service-image img,
-  .service-card .service-image img[alt="Pedicure + Manicure"] {
-    object-position: bottom center;
+  /* 🔥 FIX: Images fully visible on mobile - show full image */
+  .service-image img {
+    object-fit: cover;
+    object-position: center center !important;
+    width: 100%;
+    height: 100%;
   }
   
   .service-content {
