@@ -168,7 +168,8 @@ export default {
 /* Slides in from the LEFT - NO LOGO INSIDE */
 .mobile-nav {
   position: fixed;
-  top: 0; left: -100%;
+  top: 0; 
+  left: -100%;
   width: 320px;
   height: 100vh;
   background: #fafafa;
@@ -186,7 +187,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(0,0,0,0.05);
   flex-shrink: 0;
 }
@@ -205,14 +206,15 @@ export default {
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.8rem;
   flex: 1;
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
+  overflow-y: auto;
 }
 
 .mobile-link {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #2A2A2A;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -226,6 +228,7 @@ export default {
   border-top: 1px solid rgba(0,0,0,0.05);
   flex-shrink: 0;
   margin-top: auto;
+  padding-bottom: 0.5rem;
 }
 
 .btn-book-mobile {
@@ -233,14 +236,14 @@ export default {
   text-align: center;
   background: #25D366;
   color: #ffffff;
-  padding: 0.9rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 12px;
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 1rem;
   transition: background 0.3s ease;
-  min-height: 48px;
+  min-height: 44px;
   width: 100%;
 }
 .btn-book-mobile:hover { background: #128C7E; }
@@ -260,18 +263,19 @@ export default {
   .logo-text { font-size: 1.2rem; }
   .logo-image { height: 36px; max-width: 180px; }
   .mobile-nav { width: 280px; padding: 1.5rem; }
-  .mobile-link { font-size: 1.5rem; }
-  .mobile-nav-links { gap: 1rem; }
-  .btn-book-mobile { padding: 0.8rem 1.2rem; font-size: 0.95rem; }
+  .mobile-link { font-size: 1.4rem; }
+  .mobile-nav-links { gap: 0.6rem; }
+  .btn-book-mobile { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
-  .logo-image { height: 32px; max-width: 140px; }
-  .logo-text { font-size: 1rem; }
-  .mobile-nav { width: 85%; padding: 1.2rem; }
-  .mobile-link { font-size: 1.3rem; }
-  .mobile-nav-links { gap: 0.8rem; padding: 0.5rem 0; }
-  .btn-book-mobile { padding: 0.7rem 1rem; font-size: 0.9rem; min-height: 44px; }
-  .mobile-nav-footer { padding-top: 0.5rem; }
+  .logo-image { height: 30px; max-width: 140px; }
+  .logo-text { font-size: 0.9rem; }
+  .mobile-nav { width: 85%; max-width: 300px; padding: 1.2rem; }
+  .mobile-link { font-size: 1.2rem; }
+  .mobile-nav-links { gap: 0.5rem; padding: 0.3rem 0; }
+  .btn-book-mobile { padding: 0.6rem 1rem; font-size: 0.85rem; min-height: 40px; }
+  .mobile-nav-footer { padding-top: 0.5rem; padding-bottom: 0.3rem; }
+  .mobile-nav-header { padding-bottom: 0.5rem; }
 }
 </style>
