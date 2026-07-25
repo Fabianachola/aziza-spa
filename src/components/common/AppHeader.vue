@@ -169,13 +169,16 @@ export default {
 .mobile-nav {
   position: fixed;
   top: 0; left: -100%;
-  width: 320px; height: 100vh;
+  width: 320px;
+  height: 100vh;
   background: #fafafa;
   z-index: 999;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   transition: left 0.4s ease;
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.1);
 }
 .mobile-nav.open { left: 0; }
 
@@ -202,9 +205,9 @@ export default {
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
   flex: 1;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 
 .mobile-link {
@@ -219,9 +222,10 @@ export default {
 .mobile-link:hover { color: #25D366; }
 
 .mobile-nav-footer {
-  padding-top: 1rem;
+  padding-top: 0.8rem;
   border-top: 1px solid rgba(0,0,0,0.05);
   flex-shrink: 0;
+  margin-top: auto;
 }
 
 .btn-book-mobile {
@@ -229,13 +233,15 @@ export default {
   text-align: center;
   background: #25D366;
   color: #ffffff;
-  padding: 1rem;
-  border-radius: 16px;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   transition: background 0.3s ease;
+  min-height: 48px;
+  width: 100%;
 }
 .btn-book-mobile:hover { background: #128C7E; }
 
@@ -255,6 +261,8 @@ export default {
   .logo-image { height: 36px; max-width: 180px; }
   .mobile-nav { width: 280px; padding: 1.5rem; }
   .mobile-link { font-size: 1.5rem; }
+  .mobile-nav-links { gap: 1rem; }
+  .btn-book-mobile { padding: 0.8rem 1.2rem; font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
@@ -262,6 +270,8 @@ export default {
   .logo-text { font-size: 1rem; }
   .mobile-nav { width: 85%; padding: 1.2rem; }
   .mobile-link { font-size: 1.3rem; }
-  .mobile-nav-links { gap: 1rem; }
+  .mobile-nav-links { gap: 0.8rem; padding: 0.5rem 0; }
+  .btn-book-mobile { padding: 0.7rem 1rem; font-size: 0.9rem; min-height: 44px; }
+  .mobile-nav-footer { padding-top: 0.5rem; }
 }
 </style>
