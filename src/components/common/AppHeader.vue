@@ -45,7 +45,7 @@
       <!-- Mobile Menu Overlay -->
       <div class="mobile-overlay" :class="{ 'open': isMenuOpen }" @click="closeMenu"></div>
 
-      <!-- Mobile Nav (slides from LEFT) - NO LOGO INSIDE -->
+      <!-- Mobile Nav (slides from LEFT) -->
       <nav class="mobile-nav" :class="{ 'open': isMenuOpen }">
         <div class="mobile-nav-header">
           <button class="close-menu" @click="closeMenu" aria-label="Close menu">✕</button>
@@ -58,10 +58,8 @@
           <router-link to="/packages" class="mobile-link" @click="closeMenu">Packages</router-link>
           <router-link to="/gallery" class="mobile-link" @click="closeMenu">Gallery</router-link>
           <router-link to="/about" class="mobile-link" @click="closeMenu">About</router-link>
-        </div>
-
-        <div class="mobile-nav-footer">
-          <router-link to="/book-appointment" class="btn-book-mobile" @click="closeMenu">
+          <!-- Book Now inside the menu - directly after About -->
+          <router-link to="/book-appointment" class="mobile-link book-now-link" @click="closeMenu">
             Book Now
           </router-link>
         </div>
@@ -165,11 +163,9 @@ export default {
 .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; transition: opacity 0.3s ease; }
 .mobile-overlay.open { display: block; opacity: 1; }
 
-/* Slides in from the LEFT - NO LOGO INSIDE */
 .mobile-nav {
   position: fixed;
-  top: 0; 
-  left: -100%;
+  top: 0; left: -100%;
   width: 320px;
   height: 100vh;
   background: #fafafa;
@@ -206,10 +202,9 @@ export default {
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
   flex: 1;
   padding: 0.5rem 0;
-  overflow-y: auto;
 }
 
 .mobile-link {
@@ -223,30 +218,17 @@ export default {
 }
 .mobile-link:hover { color: #25D366; }
 
-.mobile-nav-footer {
-  padding-top: 0.8rem;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  flex-shrink: 0;
-  margin-top: auto;
-  padding-bottom: 0.5rem;
-}
-
-.btn-book-mobile {
-  display: block;
-  text-align: center;
-  background: #25D366;
-  color: #ffffff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
+/* Book Now inside the menu - same styling, close to About */
+.book-now-link {
+  color: #25D366;
   font-weight: 600;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-  min-height: 44px;
-  width: 100%;
+  margin-top: 0.2rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid rgba(37, 211, 102, 0.15);
 }
-.btn-book-mobile:hover { background: #128C7E; }
+.book-now-link:hover {
+  color: #128C7E;
+}
 
 /* Desktop */
 @media (min-width: 1025px) {
@@ -264,8 +246,7 @@ export default {
   .logo-image { height: 36px; max-width: 180px; }
   .mobile-nav { width: 280px; padding: 1.5rem; }
   .mobile-link { font-size: 1.4rem; }
-  .mobile-nav-links { gap: 0.6rem; }
-  .btn-book-mobile { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
+  .mobile-nav-links { gap: 0.4rem; }
 }
 
 @media (max-width: 480px) {
@@ -273,9 +254,7 @@ export default {
   .logo-text { font-size: 0.9rem; }
   .mobile-nav { width: 85%; max-width: 300px; padding: 1.2rem; }
   .mobile-link { font-size: 1.2rem; }
-  .mobile-nav-links { gap: 0.5rem; padding: 0.3rem 0; }
-  .btn-book-mobile { padding: 0.6rem 1rem; font-size: 0.85rem; min-height: 40px; }
-  .mobile-nav-footer { padding-top: 0.5rem; padding-bottom: 0.3rem; }
-  .mobile-nav-header { padding-bottom: 0.5rem; }
+  .mobile-nav-links { gap: 0.3rem; padding: 0.3rem 0; }
+  .book-now-link { margin-top: 0.1rem; padding-top: 0.2rem; }
 }
 </style>
