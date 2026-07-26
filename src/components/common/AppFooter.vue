@@ -8,7 +8,7 @@
         <p class="map-subtitle">Find us in the heart of Westlands</p>
       </div>
       <div class="map-container">
-        <iframe 
+        <iframe title="Aziza Spa Location Map" 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255.282!2d36.817223!3d-1.286389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a6bf7445dc1%3A0x9c8a3a4b5c6d7e8f!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1700000000000" 
           class="map-iframe" 
           allowfullscreen="" 
