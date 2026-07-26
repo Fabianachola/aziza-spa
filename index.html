@@ -8,10 +8,13 @@
     <title>Aziza Spa | Luxury Wellness in Nairobi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/images/logos/aziza-spa-logo.png" as="image">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" role="main" aria-label="Aziza Spa Main Content"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

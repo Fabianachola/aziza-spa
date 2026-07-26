@@ -1,0 +1,7 @@
+/* Critical CSS for above-the-fold content */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #FAF8F4; }
+.app-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 0; background: transparent; }
+.hero-section { min-height: 100vh; display: flex; align-items: center; }
+.hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: #FAF8F4; }
+/* Only include critical styles for visible content */
