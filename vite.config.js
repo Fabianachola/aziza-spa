@@ -7,12 +7,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('vue')) return 'vendor-vue'
-            if (id.includes('router')) return 'vendor-router'
-            if (id.includes('pinia')) return 'vendor-pinia'
-            return 'vendor'
-          }
+          if (id.includes('node_modules') && id.includes('vue')) return 'vendor'
         }
       }
     },
